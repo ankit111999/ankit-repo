@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputone"/>
+    <button type="button" onclick="checkInput()" class="btn btn-primary">Button1</button>
+    <script>
+        function checkInput() {
+            var a=document.getElementById('inputone').value;
+            if( isNaN(a)){
+                alert("It is a string");
+            } else{
+                alert("It is a number");
+            }
+        }
+    </script>
+</body>
+</html>

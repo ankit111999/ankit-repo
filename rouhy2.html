@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+#registrationForm {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input:invalid {
+  border-color: red;
+}
+
+input:valid {
+  border-color: green;
+}
+
+  </style>
+</head>
+<body>
+
+<form id="registrationForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username" required><br><br>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" required><br><br>
+  
+  <label for="password">Password:</label>
+  <input type="password" id="password" required><br><br>
+  
+  <button type="submit" id="submitBtn">Register</button>
+</form>
+
+<script>
+    // Function to create a User object
+function User(username, email, password) {
+  this.username = username;
+  this.email = email;
+  this.password = password;
+}
+
+// Function to get form values and create a User object
+function getUserData() {
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  return new User(username, email, password);
+}
+
+// Function to validate email format
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+// Function to validate the form
+function validateForm(user) {
+  if (user.username.trim() === '' || user.email.trim() === '' || user.password.trim() === '') {
+    alert('Please fill in all fields');
+    return false;
+  }
+
+  if (!isValidEmail(user.email)) {
+    alert('Please enter a valid email address');
+    return false;
+  }
+
+  return true;
+}
+
+// Function to handle form submission
+function submitForm(event) {
+  event.preventDefault();
+  
+  const user = getUserData();
+  
+  if (validateForm(user)) {
+    // Do something with the validated user data (e.g., send it to server)
+    console.log('Validated user data:', user);
+    // For demonstration, you can replace the console.log with actual data submission code
+  }
+}
+
+// Function to set up event listeners
+function setUpEventListeners() {
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.addEventListener('click', submitForm);
+}
+
+// Call the function to set up event listeners when the DOM content is loaded
+document.addEventListener('DOMContentLoaded', setUpEventListeners);
+
+</script>
+
+</body>
+</html>

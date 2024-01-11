@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th,td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 95%;
+            margin: 60px auto;
+        }
+        form label {
+            margin-bottom: auto;
+        }
+    </style>
+</head>
+<body>
+    <form id="carForm">
+        <label for="company">Company:</label>
+        <input type="text" id="company" name="company"><br><br> 
+        <label for="brandName">Brand Name:</label>
+        <input type="text" id="brandName" name="brandName"><br><br>
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color"><br><br>
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model"><br><br>
+        <input type="button" id="addCar" value="Add Car">
+    </form>
+    <h1>Car Details</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Brand Name</th>
+                <th>Company</th>
+                <th>Color</th>
+                <th>Model</th>
+            </tr>
+        </thead>
+        <tbody id="con"></tbody>
+    </table>
+    <script>
+        function Car(company, brandName, color, model) {
+            this.company = company;
+            this.brandName = brandName;
+            this.color = color;
+            this.model = model;
+        }
+        var cars = [];
+        document.getElementById("addCar").addEventListener("click", function() {
+            const company = document.getElementById('company').value;
+            const brandName = document.getElementById('brandName').value;
+            const color = document.getElementById('color').value;
+            const model = document.getElementById('model').value;
+            const newCar = new Car(company, brandName, color, model);
+            cars.push(newCar);
+            updateTable();
+            document.getElementById('carForm').reset();
+        });
+        function updateTable() {
+            var tableContent = '';
+            var tableBody = document.getElementById('con');
+            for (var i = 0; i < cars.length; i++) {
+                tableContent += "<tr>" +
+                    "<td>" + cars[i].brandName + "</td>" +
+                    "<td>" + cars[i].company + "</td>" +
+                    "<td>" + cars[i].color + "</td>" +
+                    "<td>" + cars[i].model + "</td>" +
+                    "</tr>";
+            }
+            tableBody.innerHTML = tableContent;f
+        }
+    </script>
+</body>
+</html>

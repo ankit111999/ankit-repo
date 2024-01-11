@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputone"/>
+    <input id="inputtwo"/>
+    <button type="button" onclick="Compare()" class="btn btn-primary">Button</button>
+    <script>
+       
+        function Compare(){
+            var a=document.getElementById('inputone').value;
+            var b=document.getElementById('inputtwo').value;
+            if(a > b){
+                alert("inputone is greater than input two");
+            }
+            else if(a == b)
+            {
+                alert("equal");
+            } else
+            {
+                alert("Both are similar");
+            }
+        }
+
+    </script>
+</body>
+</html>

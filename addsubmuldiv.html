@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">Number1:</label>
+    <input type="number" id="number1">
+    <label for="name">Number2:</label>
+    <input type="number" id="number2">
+    <select id="onSelect" onchange="calculate()">
+        <option value="">---Select To Perform---</option>
+        <option value="addition">Addition</option>
+        <option value="substraction">Subtraction</option>
+        <option value="multiplication">Multiplication</option>
+        <option value="division">Division</option>
+    </select>
+    <p id="result"></p>
+    
+    <script>
+        function calculate() {
+            var num1 = parseFloat(document.getElementById("number1").value);
+            var num2 = parseFloat(document.getElementById("number2").value);
+            var operation = document.getElementById("onSelect").value;
+            var result = document.getElementById("result");
+
+            switch (operation) {
+                case "addition":
+                    result.textContent = "Result: " + (num1 + num2);
+                    break;
+                case "substraction":
+                    result.textContent = "Result: " + (num1 - num2);
+                    break;
+                case "multiplication":
+                    result.textContent = "Result: " + (num1 * num2);
+                    break;
+                case "division":
+                    if (num2 !== 0) {
+                        result.textContent = "Result: " + (num1 / num2);
+                    } else {
+                        result.textContent = "Cannot divide by zero";
+                    }
+                    break;
+                default:
+                    result.textContent = "Please select an operation";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

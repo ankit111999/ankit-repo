@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 177px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="Name">Name<br/></label>
+        <input type="text" id="Name" ><br/><br/>
+        <label for="UserName">UserName<br/></label>
+        <input type="text" id="UserName"><br/><br/>
+        <label for="Email">Email<br></label>
+        <input type="Email" id="Email" ><br/><br/>
+        <label for="Password">Password<br/></label>
+        <input type="Password" id="Password" ><br/><br/>
+        <label for="ConfirmPassword">ConfirmPassword<br/></label>
+        <input type="Password" id="ConfirmPassword" ><br/><br/>
+        <button type="button" class="btn btn-primary" onclick="fun()">Click</button>
+    </form>
+    <script>
+        function fun(){
+            var Name = document.getElementById("Name").value;
+            var UserName = document.getElementById("UserName").value;
+            var Email = document.getElementById("Email").value;
+            var Password = document.getElementById("Password").value;
+            var ConfirmPassword = document.getElementById("ConfirmPassword").value;
+
+            if (Name ==="") {
+                document.getElementById("Name").placeholder = "Please enter your name";
+                document.getElementById("Name").style.border = "2px solid red";
+
+            } else if (UserName ==="") {
+                document.getElementById("UserName").placeholder = "Please enter your UserName";
+                document.getElementById("UserName").style.border = "2px solid red";
+
+            } else if (Email === "") {
+                document.getElementById("Email").placeholder = "Please enter your email";
+                document.getElementById("Email").style.border = "2px solid red";
+
+            } else if (Password === "") {
+                document.getElementById("Password").placeholder = "Please enter your password";
+                document.getElementById("Password").style.border = "2px solid red";
+
+            } else if (ConfirmPassword === "") {
+                document.getElementById("ConfirmPassword").placeholder = "Please enter your confirm password";
+                document.getElementById("ConfirmPassword").style.border = "2px solid red";
+                
+            } else if(Password !== ConfirmPassword){
+                alert("Password donot match")
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Array from 0 to 100</p><br>
+    <p id="fullArray"></p><br>
+    <p>Array with missing number</p><br>
+    <p id="arrayWithMissingNumber"></p><br>
+    <p id="missingNumber"></p>
+    <script>
+        let fullArrayElement = document.getElementById('fullArray');
+        let fullArray = [];
+        for (let i = 0; i <= 100; i++) {
+            fullArray.push(i);
+        }
+        fullArrayElement.textContent = fullArray.join(',');
+
+        let missingNumber = 57;
+        let arrayWithMissingNumberElement = document.getElementById('arrayWithMissingNumber');
+        let arrayWithMissingNumber = [];
+        for (let i = 0; i <= 100; i++) {
+            if (i !== missingNumber) {
+                arrayWithMissingNumber.push(i);
+            }
+        }
+        arrayWithMissingNumberElement.textContent = arrayWithMissingNumber.join(',');
+
+        let missingNumberElement = document.getElementById('missingNumber');
+        missingNumberElement.textContent = 'Missing number: ' + missingNumber;
+    </script>
+</body>
+</html>

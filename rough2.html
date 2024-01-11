@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <label for="Number1">Number1:</label>
+    <input type="number" id="Number1">
+    <label for="Number2">Number2:</label>
+    <input type="number" id="Number2">
+    <select id="selectOperator" onchange="fun()">
+        <option value="">-----Select an operator-----</option>
+        <option value="Addition">Addition</option>
+        <option value="Subtraction">Subtraction</option>
+        <option value="Multiplication">Multiplication</option>
+        <option value="Division">Division</option>
+    </select>
+    <button type="button" id="button" class="btn btn-primary">Calculate</button>
+    <p id="result"></p>
+    <script>
+        function fun() {
+            var num1 = parseFloat(document.getElementById("Number1").value);
+            var num2 = parseFloat(document.getElementById("Number2").value);
+            var operator = document.getElementById("selectOperator").value;
+            var result = document.getElementById("result");
+
+            switch (operator) {
+                case "Addition":
+                    result.innerHTML = "Result: " + (num1 + num2);
+                    break;
+                case "Subtraction":
+                    result.innerHTML = "Result: " + (num1 - num2);
+                    break;
+                case "Multiplication":
+                    result.innerHTML = "Result: " + (num1 * num2);
+                    break;
+                case "Division":
+                    if (num2 !== 0) {
+                        result.innerHTML = "Result: " + (num1 / num2);
+                    } else {
+                        result.innerHTML = "Cannot divide by zero!";
+                    }
+                    break;
+                default:
+                    result.innerHTML = "Please select an operator";
+            }
+        }
+    </script>
+</body>
+</html>

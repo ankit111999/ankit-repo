@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <label for="firstname">Firstname:</label>
+    <input type="text" id="firstname"></input><br><br>
+    <label for="lastname">Lastname:</label>
+    <input type="text" id="lastname"></input><br><br>
+    <label for="age">Age:</label>
+    <input type="text" id="age"></input><br><br>
+    <button type="button" onclick="submitForm()" class="btn btn-primary">Submit</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        function submitForm() {
+            var firstname = document.getElementById('firstname').value;
+            var lastname = document.getElementById('lastname').value;
+            var age = document.getElementById('age').value;
+            var resultMessage="Firstname: " + firstname + "\n" +
+                               "Lastname: " + lastname + "\n" +
+                                "Age:" + age + "\n" ;
+                                 document.getElementById('result').innerText = resultMessage;
+        }
+    </script>
+</body>
+</html>

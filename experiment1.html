@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="in" style="border: 1px solid red;">
+        <button type="button" class="btn btn-primary" onclick="checkInput()">Click</button>
+    </form>
+
+    <script>
+        function checkInput() {
+            var inputField = document.getElementById("in");
+            if (inputField.value === "") {
+              document.getElementById("in").placeholder="Input is null";
+                inputField.style.color = "red"; 
+            } else {
+                document.getElementById("in").placeholder="Input is not null";
+                inputField.style.color = "red"; 
+            }
+        }
+    </script>
+</body>
+</html>

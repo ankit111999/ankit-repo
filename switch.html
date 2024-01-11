@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function displaySelectedDay() {
+      var selectedDay = document.getElementById("days").value;
+      var resultElement = document.getElementById("result");
+      switch(selectedDay) {
+        case "Sunday":
+          resultElement.innerHTML = "You selected: Sunday";
+          break;
+        case "Monday":
+          resultElement.innerHTML = "You selected: Monday";
+          break;
+          case "Tuesday":
+          resultElement.innerHTML = "You selected: Tuesday";
+          break;
+          case "Wenasday":
+          resultElement.innerHTML = "You selected: Wenasday";
+          break;
+          case "Thursday":
+          resultElement.innerHTML = "You selected: Thursday";
+          break;
+          case "Friday":
+          resultElement.innerHTML = "You selected: Friday";
+          break;
+          case "Saturday":
+          resultElement.innerHTML = "You selected: Saturday";
+          break;
+        default:
+          resultElement.innerHTML = "Please select a day";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Select a Day</h2>
+  <select id="days" onchange="displaySelectedDay()">
+    <option value="">Select a day</option>
+    <option value="Sunday">Sunday</option>
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wenasday">Wenasday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+    <option value="Saturday">Saturday</option>
+  </select>
+
+  <p id="result"></p>
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form to JSON</title>
+</head>
+<body>
+
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required><br>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <script>
+    function submitForm() {
+      // Get form values
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var age = document.getElementById("age").value;
+
+      // Create JSON object
+      var formData = {
+        "name": name,
+        "email": email,
+        "age": age
+      };
+
+      // Convert JSON to string
+      var jsonString = JSON.stringify(formData);
+
+      // Create a Blob containing the JSON data
+      var blob = new Blob([jsonString], { type: "application/json" });
+
+      // Create a link element to trigger the download
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "formData.json";
+
+      // Append the link to the body and trigger the click event
+      document.body.appendChild(a);
+      a.click();
+
+      // Remove the link element
+      document.body.removeChild(a);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+     function UserData(firstName, lastName, phoneNo, email) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.phoneNo = phoneNo;
+            this.email = email;
+        }
+
+        function submitForm() {
+            var firstName = document.getElementById("FirstName").value;
+            var lastName = document.getElementById("LastName").value;
+            var phoneNo = document.getElementById("PhoneNo").value;
+            var email = document.getElementById("Email").value;
+
+            var user = new UserData(firstName, lastName, phoneNo, email);
+            console.log(user); // Just to display the constructed user object in the console
+            // You can use 'user' object as needed, for example, send it to a server, etc.
+        }    
+</script>
+</body>
+</html>

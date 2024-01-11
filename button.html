@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Input Display</title>
+  <style>
+    .display-area {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName">
+  </div>
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName">
+  </div>
+  <div>
+    <label for="age">Age:</label>
+    <input type="number" id="age">
+  </div>
+  <button onclick="displayUserInfo()">Show User Info</button>
+
+  <div class="display-area">
+    <h2>User Information:</h2>
+    <p><strong>First Name:</strong> <span id="displayFirstName"></span></p>
+    <p><strong>Last Name:</strong> <span id="displayLastName"></span></p>
+    <p><strong>Age:</strong> <span id="displayAge"></span></p>
+  </div>
+
+  <script>
+    function displayUserInfo() {
+      // Get input field values
+      var firstName = document.getElementById('firstName').value;
+      var lastName = document.getElementById('lastName').value;
+      var age = document.getElementById('age').value;
+
+      // Display the values
+      document.getElementById('displayFirstName').textContent = firstName;
+      document.getElementById('displayLastName').textContent = lastName;
+      document.getElementById('displayAge').textContent = age;
+    }
+  </script>
+</body>
+</html>
+This HTML code sets up input fields for first name, last name, and age, along with a button. When the button is clicked, the displayUserInfo() JavaScript function gets the values entered in the input fields and displays them below the input area.
+
+You can copy and paste this code into an HTML file and open it in a web browser to see the functionality in action.
+
+User
+first name last name age with one button and display the result while clicking the button using html 
+ChatGPT
+Certainly! Below is a simple HTML code that utilizes a single button to capture the user's first name, last name, and age, and then displays the result on the page upon clicking the button:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Input Display</title>
+</head>
+<body>
+  <div>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName">
+  </div>
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName">
+  </div>
+  <div>
+    <label for="age">Age:</label>
+    <input type="number" id="age">
+  </div>
+  <button onclick="displayUserInfo()">Show User Info</button>
+
+  <div id="displayArea">
+    <!-- User information will be displayed here -->
+  </div>
+
+  <script>
+    function displayUserInfo() {
+      // Get input field values
+      var firstName = document.getElementById('firstName').value;
+      var lastName = document.getElementById('lastName').value;
+      var age = document.getElementById('age').value;
+      var userInfo = "First Name: " + firstName + "<br>" +
+                     "Last Name: " + lastName + "<br>" +
+                     "Age: " + age;
+      document.getElementById('displayArea').innerHTML = userInfo;
+    }
+  </script>
+</body>
+</html>

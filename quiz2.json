@@ -1,0 +1,37 @@
+[
+    {
+        "question" : "What is the height of Mt.Everest?",
+        "answer" : "8,848 meters",
+        "opt" : [
+            "8,842 meters","8,845 meters","8,848 meters","8,898 meters"
+        ]
+    },
+    {
+        "question" : "Who is the first prime minister of Nepal?",
+        "answer" : "Jung Bahadur Rana",
+        "opt" : [
+            "Bhimsen Thapa","Puspakamal Dahal","KP Sharma Oli","Jung Bahadur Rana"
+        ]
+    },
+    {
+        "question" : "Who is the first president of Nepal?",
+        "answer" : "Jung Bahadur Rana",
+        "opt" : [
+            "Bhimsen Thapa","Vidya Devi Bhandari","Dr. Ram Baran Yadav","Ram Chandra Poudel"
+        ]
+    },
+    {
+        "question" : "Who is the first king of Nepal?",
+        "answer" : "Prithivi Narayan Shah",
+        "opt" : [
+            "Chandra Shumser","Prithivi Narayan Shah","Mahendra Shah","Birendra Shah"
+        ]
+    },
+    {
+        "question" : "Who is the first women minister of Nepal?",
+        "answer" : "Dwarika Devi Thakurani",
+        "opt" : [
+            "Dwarika Devi Thakurani","Vidya Devi Bhandari","Ram Kumari Jhakri","Sujata Koirala"
+        ]
+    }
+]

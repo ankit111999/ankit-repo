@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <style>
-        /* Styling for the quiz layout */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -15,48 +13,43 @@
             align-items: center;
             min-height: 100vh;
             flex-direction: column;
-            background-size: cover;
-            background-position: center;
-            background-image: url('fghi.jpg');
         }
 
-        /* Styling for the question containers */
+        #questions-container {
+            max-width: 80%;
+            overflow-y: auto;
+        }
+
         .question-container {
             margin-bottom: 20px;
-            border: 2px solid #333;
-            border-radius: 5px;
-            padding: 10px;
-            background-color: wheat;
-            display: inline-block;
-            width: 300px;
-            /* Adjust as needed */  
-            margin-right: 20px;
         }
 
-        /* Styling for the question text */
         .question {
             font-size: 1.5em;
             margin: 20px 0;
             padding-bottom: 10px;
-            color: #000;
+            color: #000; /* Set text color to black */
         }
 
-        /* Styling for options table */
         table {
-            width: 100%;
+            width: 100%; /* Use 100% width for better responsiveness */
             border-collapse: separate;
             border-spacing: 10px;
             border: 2px solid #333;
-            background-color: wheat;
+            background-color: #fff; /* Set background color to white */
         }
 
-        /* Styling for labels and buttons */
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
         label {
             display: block;
             font-size: 1.2em;
             color: #333;
         }
-
         button {
             font-size: 1.2em;
             padding: 10px;
@@ -72,28 +65,14 @@
             background-color: #2d68bf;
         }
 
-        /* Styling for result display */
         #score {
             font-size: 1.2em;
             margin-top: 20px;
-            color: #000;
-        }
-
-        /* Styling for the title */
-        div>h {
-            font-size: 33px;
-            font-style: italic;
-            font-weight: bold;
-            text-decoration: underline;
+            color: #000; /* Set text color to black */
         }
     </style>
 </head>
-
 <body>
-    <div>
-        <!-- Quiz title -->
-        <h>Quiz Game</h>
-    </div>
     <div id="questions-container"></div>
     <div id="score"></div>
     <button onclick="showResult()">Submit</button>
@@ -135,6 +114,7 @@
                     "Dwarika Devi Thakurani", "Vidya Devi Bhandari", "Ram Kumari Jhakri", "Sujata Koirala"
                 ]
             }
+            // Add more questions here...
         ];
 
         let selectedAnswers = [];
@@ -145,16 +125,16 @@
             jsonData.forEach((question, index) => {
                 const questionContainer = document.createElement("div");
                 questionContainer.className = "question-container";
-
+                
                 const questionElement = document.createElement("div");
                 questionElement.className = "question";
                 questionElement.innerHTML = `<p>${index + 1}. ${question.question}</p>`;
                 questionContainer.appendChild(questionElement);
-
+                
                 const optionsContainer = document.createElement("div");
                 optionsContainer.className = "options-container";
                 const optionsTable = document.createElement("table");
-
+                
                 for (let optIndex = 0; optIndex < question.opt.length; optIndex++) {
                     const option = document.createElement("tr");
                     option.innerHTML = `<td><label><input type="radio" name="q${index}" value="${question.opt[optIndex]}"> ${question.opt[optIndex]}</label></td>`;
@@ -162,7 +142,7 @@
                 }
                 optionsContainer.appendChild(optionsTable);
                 questionContainer.appendChild(optionsContainer);
-
+                
                 questionsContainer.appendChild(questionContainer);
             });
         }
@@ -190,6 +170,6 @@
 
         window.onload = loadQuestions;
     </script>
-</body>
 
+</body>
 </html>
